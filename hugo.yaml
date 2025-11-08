@@ -1,0 +1,264 @@
+baseURL: https://www.gregory.wychowaniec.fr/
+languageCode: fr
+title: Grégory Wychowaniec
+theme: 'hugo-profile'
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+enableRobotsTXT: true
+
+pagination:
+  pagerSize: 3
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  title: "Grégory Wychowaniec"
+  description: Ingénieur Cybersécurité
+  favicon: "/fav.png"
+
+  useBootstrapCDN: false
+
+  mathjax: false
+
+  animate: true
+
+  font:
+    fontSize: 1rem
+    fontWeight: 400
+    lineHeight: 1.5
+    textAlign: left
+
+  navbar:
+    align: ms-auto
+    brandName: "Grégory Wychowaniec"
+    disableSearch: true
+    searchPlaceholder: "Rechercher"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  hero:
+    enable: true
+    intro: "Bienvenue, je suis"
+    title: "Grégory."
+    subtitle: "Ingénieur Cybersécurité"
+    content: "Un passionné de l'informatique et des nouvelles technologies avec une expertise dans le domaine de la Cybersécurité."
+    image: /images/hero.jpg
+    bottomImage:
+      enable: true
+    roundImage: false
+    button:
+      enable: true
+      name: "Resume"
+      url: "/files/CV_Gregory_Wychowaniec.pdf"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/GregoryWychowaniec
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/gregory-wychowaniec
+
+  about:
+    enable: true
+    title: "À propos de moi"
+    image: "/images/me.png"
+    content: |-
+      Expert en cybersécurité avec une expérience solide en gestion de SOC, analyse forensique et développement d'outils de sécurité. Passionné par la veille technologique et le développement de nouvelles compétences pour rester à la pointe de la cybersécurité
+
+      Je suis actuellement Ingénieur Cybersécurité pour ZeroTrust au sein d'un SOC managé.
+    skills:
+      enable: true
+      title: "Certains technologies que j'utilise quotidiennement pour le développement du SOC :"
+      items:
+        - "Elasticsearch"
+        - "Sigma & Elastalert"
+        - "Python avec JetBrains"
+        - "Kubernetes"
+        - "Azure, GCP, AWS"
+        - "Fortinet, ESET, Palo Alto, Wazuh"
+
+  experience:
+    enable: true
+    title: "Expérience"
+    items:
+      - job: "Ingénieur Cybersécurité"
+        company: "Zero Trust"
+        companyUrl: "https://www.zerotrust.fr/"
+        date: "Depuis février 2022"
+        info:
+          enable: false
+        content: |
+          Actuellement Ingénieur Cybersécurité pour ZeroTrust au sein du SOC :
+
+          - Gestion de tickets pour un SOC managé On-Premise et Cloud
+          - Développement et amélioration de nouveaux outils du SOC (règles de détection Sigma, automatisation, collecteurs des logs)
+          - Veille sur de nouvelles failles et attaques pour faire avancer les capacités de détection
+          - Formation des nouveaux analystes
+          - Maintien en condition opérationnelle (Elasticsearch, Kubernetes, Proxmox, infrastructure)
+          - Analyses forensiques clients
+
+      - job: "Stage de Mastère Spécialisé"
+        company: "SPIE Industrie"
+        companyUrl: "https://www.spie.fr/fr/nos-filiales/spie-industrie"
+        date: "Avr 2021 - Sept 2021"
+        info:
+          enable: false
+        content: |
+          Réalisation d'un outil de gestion des vulnérabilités et de suivi des correctifs :
+
+          - Conception, développement et documentation de l'outil avec le framework Django.
+          - Création d'un accès distant VPN avec pare-feux Stormshield et Fortinet.
+          - Participation à des projets de cybersécurité industrielle (durcissement, migration, démonstrations).
+
+      - job: "Stage de 3e année d'ingénieur"
+        company: "SII"
+        companyUrl: "https://sii-group.com/fr-FR"
+        date: "Avr 2020 - Août 2020"
+        info:
+          enable: false
+        content: |
+          Implémentation d'une architecture sécurisée dans un environnement virtuel :
+
+          - Analyse des risques avec la méthode EBIOS Risk Manager.
+          - Écriture d'un dossier d'architecture technique.
+          - Implémentation de réseaux (pare-feux/routeurs, IDS, etc.).
+          - Mise en place des services réseaux (serveurs SFTP, Active Directory, serveurs Web et mail, etc.).
+
+      - job: "Stage de 2e année d'ingénieur"
+        company: "CIPAM"
+        companyUrl: "https://cipam.com/"
+        date: "Avr 2019 - Août 2019"
+        info:
+          enable: false
+        content: |
+          Implémentation du Bluetooth dans un coffret RFID avec une application Android :
+
+          - Programmation embarquée en Pascal Objet.
+          - Développement d'une application Android avec utilisation du Bluetooth.
+          - Mise en œuvre de la localisation GPS et d'une communication Sigfox.
+
+      - job: "Stage de 2e année de DUT"
+        company: "Direction Territoriale du Grésivaudan"
+        companyUrl: "https://www.isere.fr/"
+        date: "Avr 2017 - Juin 2017"
+        info:
+          enable: false
+        content: |
+          Développement d'une application pour gérer les agents du territoire :
+
+          - Analyse de l'existant (Fichiers Excel).
+          - Création d'une base de données Access.
+          - Programmation des interfaces et contrôleurs en VBA.
+          - Test de l'application et installation sur le serveur et les postes.
+          - Mise en place d'une documentation.
+
+  education:
+    enable: true
+    title: "Formation"
+    index: false
+    items:
+      - title: "Mastère Spécialisé Cybersécurité du Numérique"
+        school:
+          name: "INSA, Lyon"
+          url: "https://www.insa-lyon.fr/fr/mastere-cybersecurite-numerique"
+        date: "2020 - 2021"
+      - title: "Diplôme d'ingénieur en Informatique"
+        school:
+          name: "ISIMA, Clermont-Ferrand"
+          url: "https://www.isima.fr/"
+        date: "2017 - 2020"
+        content: |-
+          Filière Réseaux et Sécurité Informatique
+      - title: "DUT Informatique"
+        school:
+          name: "IUT2 Grenoble"
+          url: "https://formations.univ-grenoble-alpes.fr/plugins/odf-web/odf/_content/program-dut-informatique-2-6-2/BUT%20Informatique%20_%20Grenoble.pdf"
+        date: "2015 - 2017"
+      - title: "Baccalauréat Scientifique"
+        date: "2015"
+        school:
+          name: "Lycée Honoré Romane"
+
+  achievements:
+    enable: true
+    title: "Centres d'intêrets"
+    items:
+      - title: Central de l'équipe régionale du Volley Club Guillestre
+        content: Équipe qui évolue au niveau régional depuis deux ans
+        url: https://www.facebook.com/profile.php?id=100010241648861
+      - title: Course à pied
+        content: Course à pied et trail
+      - title: Ski
+      - title: Développement personnel et alimentation
+
+  # projects:
+  #   enable: false
+  #   title: "Projets"
+  #   items:
+  #     - title: Projet title
+  #       content: Description
+  #       image: /images/...
+  #       featured:
+  #         name: Demo
+  #         link: https://lien
+  #       badges:
+  #         - "Hugo"
+  #         - "Bootstrap"
+  #         - "Javascript"
+  #       links:
+  #         - icon: fa fa-envelope
+  #           url: 
+  #         - icon: fab fa-github
+  #           url: https://...
+
+  contact:
+    enable: true
+    title: "Entrer en contact"
+    content: Ma boîte mail est toujours ouverte. Que vous ayez une question ou que vous souhaitiez simplement me dire bonjour, je ferai de mon mieux pour vous répondre !
+    btnName: Envoyez-moi un mail
+    btnLink: mailto:wycho.greg@gmail.com
+
+  footer:
+    socialNetworks:
+      github: https://github.com/GregoryWychowaniec
+      linkedin: https://www.linkedin.com/in/gregory-wychowaniec
+
+  listPages:
+    disableFeaturedImage: false
+
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: false
+    scrollprogress:
+      enable: false
+    tags:
+      openInNewTab: true
+
+  terms:
+    read: "Lire"
+    toc: "Sommaire"
+    copyright: "Tous droits réservés"
+    pageNotFound: "Page introuvable"
+    emailText: "Consultez ce site"
