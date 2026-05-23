@@ -32,7 +32,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
-        run: npm install
+        run: npm ci
       - name: Build the site
         run: npm run build
       - name: Upload artifact
