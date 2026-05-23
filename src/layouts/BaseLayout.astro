@@ -1,0 +1,164 @@
+---
+import { nav, site } from '../data/site';
+import '../styles/global.css';
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+};
+
+const {
+  title = site.title,
+  description = site.description,
+  canonical = Astro.url.pathname,
+  image = '/images/hero.jpg',
+  jsonLd,
+} = Astro.props;
+
+const pageTitle = title === site.title ? title : `${title} | ${site.name}`;
+const canonicalUrl = new URL(canonical, site.url).toString();
+const imageUrl = new URL(image, site.url).toString();
+const currentPath = Astro.url.pathname;
+const year = new Date().getFullYear();
+
+const isActive = (href: string) => (href === '/' ? currentPath === '/' : currentPath.startsWith(href));
+---
+
+<!doctype html>
+<html class="dark" lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/fav.png" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <link rel="alternate" type="application/rss+xml" title="Blog de Grégory Wychowaniec" href="/rss.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script is:inline>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#dbfcff',
+              'cyber-cyan': '#00F0FF',
+              'terminal-green': '#10B981',
+              'alert-red': '#EF4444',
+              background: '#0c1324',
+              surface: '#0c1324',
+              'surface-container-lowest': '#070d1f',
+              'surface-container-low': '#151b2d',
+              'surface-container': '#191f31',
+              'surface-container-high': '#23293c',
+              'surface-container-highest': '#2e3447',
+              'on-surface': '#dce1fb',
+              'on-surface-variant': '#b9cacb',
+              outline: '#849495',
+              'outline-variant': '#3b494b',
+              'slate-400': '#94A3B8',
+              'slate-900': '#0F172A',
+            },
+            borderRadius: {
+              DEFAULT: '0.125rem',
+              lg: '0.25rem',
+              xl: '0.5rem',
+              full: '9999px',
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+              headline: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+              body: ['Inter', 'ui-sans-serif', 'system-ui'],
+              mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+            },
+            fontSize: {
+              'headline-xl': ['64px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+              'headline-lg': ['40px', { lineHeight: '1.2', fontWeight: '600' }],
+              'headline-lg-mobile': ['32px', { lineHeight: '1.2', fontWeight: '600' }],
+              'section-header': ['24px', { lineHeight: '1.4', fontWeight: '600' }],
+              'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
+              'body-md': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+              'code-label': ['14px', { lineHeight: '1.2', fontWeight: '500' }],
+              'button-text': ['14px', { lineHeight: '1', letterSpacing: '0.05em', fontWeight: '600' }],
+            },
+            spacing: {
+              'container-max': '1200px',
+              gutter: '24px',
+              'margin-mobile': '16px',
+              'stack-sm': '8px',
+              'stack-md': '24px',
+              'stack-lg': '64px',
+              'section-padding': '120px',
+            },
+          },
+        },
+      };
+    </script>
+    {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body class="font-body overflow-x-hidden bg-background text-on-surface selection:bg-cyber-cyan selection:text-background">
+    <div class="scanline pointer-events-none" aria-hidden="true"></div>
+    <header class="site-header sticky top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md">
+      <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">
+        <a class="group flex items-center gap-3 no-underline" href="/" aria-label="Accueil">
+          <span class="flex h-8 w-8 overflow-hidden rounded-sm">
+            <img src="/fav.png" alt="" width="32" height="32" loading="eager" decoding="async" class="h-full w-full object-contain" />
+          </span>
+          <span class="font-headline text-sm font-bold tracking-tight text-cyber-cyan">{site.name}</span>
+        </a>
+        <div class="flex items-center gap-6 md:gap-8">
+          <nav class="hidden items-center gap-6 md:flex" aria-label="Navigation principale">
+            {
+              nav.map((item) => (
+                <a class:list={['nav-link', isActive(item.href) && 'is-active']} href={item.href}>
+                  [ {item.label} ]
+                </a>
+              ))
+            }
+          </nav>
+
+      </div>
+    </header>
+    <main class="mx-auto min-h-[70vh] max-w-[1200px] px-6">
+      <slot />
+    </main>
+    <footer class="mt-12 border-t border-white/5 bg-surface-container-lowest py-12">
+      <div class="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-8 px-6 md:flex-row">
+        <p class="font-mono text-xs text-on-surface-variant">
+          <span class="text-cyber-cyan">© {year}</span> Grégory Wychowaniec
+        </p>
+        <p class="flex gap-6 font-mono text-[10px] uppercase tracking-widest">
+          <a class="footer-link" href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="footer-link" href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="footer-link" href={`mailto:${site.email}`}>Contact</a>
+          <a class="footer-link inline-flex items-center" href="/rss.xml" aria-label="Flux RSS">
+            <span class="material-symbols-outlined text-sm" aria-hidden="true">rss_feed</span>
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
