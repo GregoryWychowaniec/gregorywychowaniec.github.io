@@ -1,8 +1,8 @@
 export const site = {
   name: 'Grégory Wychowaniec',
-  title: 'Grégory Wychowaniec - Ingénieur Cybersécurité',
+  title: 'Grégory Wychowaniec - CTO Cybersécurité',
   description:
-    'Site personnel de Grégory Wychowaniec : parcours en cybersécurité, expérience SOC, formation informatique, passions et journal d\'expériences autour de l\'IA.',
+    'Site personnel de Grégory Wychowaniec : CTO cybersécurité, SOC managé, architecture sécurité, automatisation, IA appliquée cyber/SOC, formation, passions et journal d\'expériences.',
   url: 'https://www.gregory.wychowaniec.fr',
   email: 'wycho.greg@gmail.com',
   linkedin: 'https://www.linkedin.com/in/gregory-wychowaniec',

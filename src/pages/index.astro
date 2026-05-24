@@ -12,14 +12,17 @@ const jsonLd = [
     url: site.url,
     email: site.email,
     sameAs: [site.linkedin, site.github],
-    jobTitle: 'Ingénieur Cybersécurité',
+    jobTitle: 'Directeur de la technologie (CTO) - Cybersécurité',
     knowsAbout: [
       'Cybersécurité',
-      'SOC',
+      'SOC managé',
+      'Architecture sécurité',
+      'Détection',
       'Analyse forensique',
       'Automatisation',
       'Cloud',
-      'Intelligence artificielle',
+      'Intelligence Artificielle',
+      'IA appliquée cyber/SOC',
     ],
   },
   {
@@ -32,17 +35,29 @@ const jsonLd = [
 
 const experiences = [
   {
-    role: 'Ingénieur Cybersécurité & CTO',
+    role: 'Directeur de la technologie (CTO)',
     company: 'Zero Trust',
     url: 'https://www.zerotrust.fr/',
-    date: 'Depuis fév. 2022',
+    date: 'Depuis mars 2026',
     items: [
-      'Gestion de tickets pour un SOC managé On-Premise et Cloud.',
-      'Développement et amélioration d\'outils SOC : règles Sigma, automatisation.',
-      'Veille sur les nouvelles failles et attaques.',
+      'Vision technique et architecture pour un SOC managé On-Premise et Cloud.',
+      'Définition de la roadmap, des arbitrages d\'architecture et des orientations techniques.',
+      'Industrialisation des capacités de détection : règles Sigma, automatisation, collecteurs de logs et prototypes IA.',
+      'Référent technique auprès des analystes SOC : bonnes pratiques, documentation, veille menaces et appui aux investigations complexes.',
+    ],
+  },
+  {
+    role: 'Ingénieur cybersécurité',
+    company: 'Zero Trust',
+    url: 'https://www.zerotrust.fr/',
+    date: 'Fév. 2022 - Fév. 2026',
+    items: [
+      'Gestion opérationnelle de tickets pour un SOC managé On-Premise et Cloud.',
+      'Appui aux investigations et analyses forensiques clients.',
+      'Développement et amélioration des outils SOC : règles Sigma, automatisation et collecteurs de logs.',
+      'Enrichissement des capacités de détection par la veille failles et attaques.',
+      'MCO des infrastructures Elasticsearch, Kubernetes et Proxmox.',
       'Formation des nouveaux analystes.',
-      'MCO : Elasticsearch, Kubernetes, Proxmox, infrastructure.',
-      'Analyses forensiques clients.',
     ],
   },
   {
@@ -52,8 +67,8 @@ const experiences = [
     date: 'Avr 2021 - Sept 2021',
     items: [
       'Conception d\'un outil de gestion des vulnérabilités avec Django.',
-      'Création d\'un accès distant VPN Stormshield et Fortinet.',
-      'Cybersécurité industrielle.'
+      'Contribution à l\'analyse des risques en cybersécurité industrielle.',
+      'Création d\'accès distants VPN Stormshield et Fortinet.',
     ],
   },
   {
@@ -105,20 +120,26 @@ const education = [
   },
 ];
 
-const skills = [
-  'Elasticsearch',
-  'Sigma & Elastalert',
-  'Python',
-  'Go',
-  'XDR',
-  'Git',
-  'Docker & Kubernetes',
-  'Cloud (Azure, GCP, AWS)',
-  'CI/CD',
-  'Wazuh',
+const skillGroups = [
+  {
+    title: 'Architecture SOC & cloud',
+    skills: ['SOC managé', 'On-Premise', 'Cloud', 'PKI', 'SSO', 'Docker', 'Kubernetes', 'Proxmox', 'Azure', 'GCP', 'AWS'],
+  },
+  {
+    title: 'Détection & automatisation',
+    skills: ['Elasticsearch', 'Sigma', 'Elastalert', 'XDR', 'Wazuh', 'Collecteurs de logs', 'Automatisation', 'CI/CD'],
+  },
+  {
+    title: 'Investigation & sécurité offensive',
+    skills: ['DFIR', 'Autopsy', 'Reverse engineering', 'Kali', 'Nmap', 'Burp', 'Metasploit', 'CTF', 'Bug bounty'],
+  },
+  {
+    title: 'Langages, normes & méthodes',
+    skills: ['Python', 'Go', 'Java', 'Web', 'Assembleur', 'Git', 'ISO 27001', 'EBIOS RM'],
+  },
 ];
 
-const aiSkills = ['LLM', 'Prompt engineering', 'Agents IA', 'RAG', 'LangChain', 'MCP', 'Bases vectorielles', 'Fine-tuning', 'TensorFlow'];
+const aiSkills = ['LLM', 'RAG', 'Agents IA', 'Bases vectorielles', 'Prompt engineering', 'LangChain', 'MCP'];
 
 const interests = [
   { title: 'Course & Trail', text: 'Pratique régulière', icon: 'landscape' },
@@ -139,7 +160,7 @@ const interests = [
         Grégory<span class="text-cyber-cyan">.</span>
       </h1>
       <p class="mb-10 max-w-xl text-body-lg leading-relaxed text-on-surface-variant">
-        Ingénieur cybersécurité, passionné par l'informatique, les nouvelles technologies et le développement d'outils utiles au quotidien des équipes techniques.
+        CTO cybersécurité, orienté SOC managé On-Premise et Cloud, architecture sécurité, industrialisation de la détection, automatisation et IA appliquée aux usages cyber.
       </p>
       <div class="flex flex-wrap gap-4">
         <a class="button-cyber" href="/files/CV_Gregory_Wychowaniec.pdf" download>Télécharger mon CV</a>
@@ -161,9 +182,9 @@ const interests = [
         </div>
       </div>
       <div class="mt-6 border-l-2 border-cyber-cyan bg-surface-container/50 p-4">
-        <h2 class="font-headline text-lg font-bold text-white">Cybersécurité, SOC et automatisation</h2>
+        <h2 class="font-headline text-lg font-bold text-white">Cybersécurité, SOC managé et IA appliquée</h2>
         <p class="mt-2 text-sm leading-relaxed text-on-surface-variant">
-          Mon parcours s'est construit autour de la sécurité opérationnelle, de l'analyse technique, de la veille et de l'amélioration continue.
+          Mon parcours s'est construit autour de la sécurité opérationnelle, de l'architecture SOC, de la détection, de la veille et de l'amélioration continue.
         </p>
       </div>
       <div class="absolute -right-4 -top-4 -z-10 h-12 w-12 border-r-2 border-t-2 border-white/10 transition-colors group-hover:border-cyber-cyan"></div>
@@ -174,19 +195,28 @@ const interests = [
   <section class="border-t border-white/5 py-24" id="presentation">
     <div class="mb-16 max-w-3xl">
       <p class="section-kicker">// À propos</p>
-      <h2 class="mb-6 font-headline text-section-header text-white">Un profil technique orienté terrain.</h2>
+      <h2 class="mb-6 font-headline text-section-header text-white">Un profil technique orienté architecture, terrain et détection.</h2>
       <p class="text-lg leading-relaxed text-on-surface-variant">
-        J'ai une expérience solide en gestion de SOC, analyse forensique, automatisation et développement d'outils de sécurité. J'aime comprendre les systèmes, documenter les choix techniques et construire des solutions fiables.
+        J'ai une expérience solide en SOC managé, architecture sécurité, analyse forensique, automatisation et développement d'outils de détection. J'aime comprendre les systèmes, documenter les choix techniques et construire des solutions fiables pour les équipes opérationnelles.
       </p>
     </div>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       <article class="cyber-border bg-surface-container/30 p-8">
         <h3 class="mb-6 flex items-center gap-3 font-headline font-bold text-white">
           <span class="material-symbols-outlined text-cyber-cyan" aria-hidden="true">terminal</span>
-          Technical Core
+          Socle technique
         </h3>
-        <div class="flex flex-wrap gap-2">
-          {skills.map((skill) => <span class="tech-badge">{skill}</span>)}
+        <div class="space-y-5">
+          {
+            skillGroups.map((group) => (
+              <div>
+                <p class="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-cyber-cyan">{group.title}</p>
+                <div class="flex flex-wrap gap-2">
+                  {group.skills.map((skill) => <span class="tech-badge">{skill}</span>)}
+                </div>
+              </div>
+            ))
+          }
         </div>
         <div class="my-6 h-px bg-cyber-cyan/20"></div>
         <p class="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-cyber-cyan">Exploration IA</p>
@@ -201,7 +231,10 @@ const interests = [
         </h3>
         <div class="space-y-4 text-sm leading-relaxed text-on-surface-variant">
           <p>
-            J'explore progressivement les usages de l'intelligence artificielle appliqués aux pratiques métiers, à l'automatisation et à la cybersécurité. Cette orientation complète mon parcours d'ingénieur.
+            J'explore progressivement les usages de l'intelligence artificielle appliqués aux pratiques SOC : aide à la détection, automatisation, synthèse, qualification et enrichissement des investigations.
+          </p>
+          <p>
+            Cette orientation complète mon socle cybersécurité. Elle reste ancrée dans les besoins terrain : réduire le bruit, accélérer l'analyse et garder une démarche responsable.
           </p>
           <p>
             Le <a class="text-cyber-cyan underline-offset-4 hover:underline" href="/blog">[ blog ]</a> me sert de journal public pour documenter ces expérimentations.
@@ -285,7 +318,7 @@ const interests = [
 
   <section class="border-t border-white/5 py-24" id="passions">
     <div class="mb-16">
-      <p class="section-kicker">// Personal stack</p>
+      <p class="section-kicker">// Équilibre personnel</p>
       <h2 class="font-headline text-section-header text-white">Centres d'intérêt</h2>
     </div>
     <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
