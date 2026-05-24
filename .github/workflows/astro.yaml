@@ -8,6 +8,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -25,18 +27,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Install Node.js dependencies
         run: npm ci
       - name: Build the site
         run: npm run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
   deploy:
@@ -48,4 +50,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
